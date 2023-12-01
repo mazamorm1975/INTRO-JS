@@ -1,52 +1,43 @@
-const invoice = {
-    id: 1,
-    name: "Pepsico S.A. De C.V.",
-    date: new Date(),
-    client: {
-      id: 580062,
-      nombre: "Mario",
-      apellido: "Zamora",
-      edad: 48,
-    },
-    items: [
-      {
-        product: "Caminadora",
-        price: 5004.45,
-        quantity: 2,
-      },
-      {
-        product: "Costal De box",
-        price: 3055.85,
-        quantity: 1,
-      },
-      {
-        product: "Computadora",
-        price: 8740.44,
-        quantity: 5,
-      },
-    ],
-    total: function () {
-      let total = 0;
-      this.items.forEach((item) => {
-        total = total + item.price * item.quantity;
-      });
-      return total;
-    },
-    saludar: function () {
-      return `Hola ${this.client.nombre} ${this.client.apellido}`;
-    },
-  };
-  
-if(invoice.client != undefined && invoice.client.name){
-    console.log('dato encontrado');
-} else{
-    console.log('no se cuenta con ese dato')
-}
+//Se genera arreglo 1
+const arreglo1 = [
+  "Corredora",
+  "Escritorio",
+  "Tapete",
+];
 
-//Utilizando el operador Optional ?
+//Se genera arreglo 2
+const arreglo2 = [
+    "servidor", 
+    "teclado", 
+    "CPU"
+];
 
-if(invoice.client?.name){
-    console.log('Dato encontrado');
-} else{
-    console.log('No se encontro este parametro');
-}
+//Se agregan articulos al arreglo 1 por el metodo push
+arreglo1.push("pantalla LCD", "Sony T.V.");
+
+//Se agregan articulos al arreglo 2 por el metodo push
+arreglo2.push("Protector","Adapter");
+
+//Se concantenan arreglo1 y arreglo2 con el metodo spread
+const concentrado = [...arreglo1, ...arreglo2,'Lapiz','Lapicero'];
+
+//Se recorren el arreglo concentrado por una función lambda
+concentrado.forEach(x => console.log(x));
+
+
+//Se genera arreglo3
+const arreglo3 = ["Mario","Paty","Diana","Violeta","Daniela","Chorchitas"];
+
+//Se genera arreglo4
+
+const arreglo4 = ["Zamora","Aburto","Zamora Aburto","Zamora Aburto","Zamora Aburto","Miramon Zamora"];
+
+//Se concatenan arreglo1 y arreglo2 con la funcion concat
+const arreglo5 = arreglo3.concat(arreglo4);
+
+//Impresión en consola
+console.log(arreglo3.concat(arreglo4));
+
+//Se recorre arreglo concatenado por una función lambda
+arreglo5.forEach(listado => console.log(listado));
+
